@@ -1,0 +1,42 @@
+<% provide(:title, @restaurant.name) %>
+<div class="general-page-container">
+<div class="span7">
+      <div class="profile-title">
+        <%= @restaurant.name %>
+      </div>
+      <div class="restaurant-details">
+      <div class="restaurant-pic">
+        <%= image_tag("http://www.lookbookeat.com/images/#{@restaurant.rating}Stars.png", :size => "100x100", id:"rating-pic", alt: "Find and book tables in your area!")%>
+        <%= image_tag("http://www.lookbookeat.com/images/#{@restaurant.picture}", :size => "150x150", alt: "Find and book tables in your area!")%>
+      </div>
+      <div class="restaurant-info">
+      <h3>
+      <%= @restaurant.address %><br>
+      <%= @restaurant.phone_no %><br>
+      <%= @restaurant.food_type %><br>
+    </h3>
+  </div>
+</div>
+<div class="restaurant-desc">
+      
+      
+      <%= @restaurant.description %><br>
+    </div>
+
+   </div>
+   <div class="span5">
+    <ul>
+   <li><%= link_to image_tag("menus.png", :class => "menu",  alt: "Menus"), menu_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("book_a_table.png", :class => "menu", alt: "Book A Table"), booking_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("find_on_map.png", :class => "menu", alt: "Find On Map"), map_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("comment.png", :class => "menu", alt: "Comment"), comments_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("share.png", :class => "menu", alt: "Share"), 'http://www.apple.com/ie/' %>
+   </li>
+  </ul>
+    <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+   </div>
+</div> 

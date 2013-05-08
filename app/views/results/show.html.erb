@@ -1,0 +1,30 @@
+<% provide(:title, 'Search Results') %>
+
+<div class="general-page-container">
+<div class="span7">
+  <%= image_tag("find_res_text.png", :size => "402x98", alt: "Find a restaurant", id:"find-res-text")%>
+<div class="results-list">
+    
+    
+  <ul>
+        <% for restaurant in @results %>
+        <li>
+        <%= link_to restaurant.name, restaurant %>, <%= restaurant.address %>
+    </li>
+    <% end %>
+</ul>
+</div>
+
+
+  <h2>
+    Find your favourite foods at any time!
+  </h2>
+</div> 
+<div class="span5">
+  <h2>
+    Download our app from the app store!
+  </h2>
+  <%= link_to image_tag("3iphones.png", alt: "LookBookEat App"), 'http://www.apple.com/ie/' %>
+  <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+</div>
+</div>

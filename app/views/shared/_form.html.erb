@@ -1,0 +1,14 @@
+<%= form_tag bookings_path, method: :post do |f| %>
+  <%= label_tag "booking_info[message]", "Message" %><br/>
+  <%= text_area_tag "booking_info[message]", "I'd like to book a table for...please add time, date and no. of seats you require ", size: "60x10" %>
+  <% @restaurant = Restaurant.find(params[:id]) %>
+  <% hidden_field_tag "booking_info[restaurant_email]", "@restaurant.email"%>
+  <% hidden_field_tag "booking_info[restaurant_id]", "@restaurant.id"%>
+  
+  <% hidden_field_tag "booking_info[user_email]", "ocarrollmj@gmail.com"%>
+  <% hidden_field_tag "booking_info[user_name]", "MJ O'Carroll"%>
+  <% hidden_field_tag "booking_info[user_id]", "1"%>
+  <br/>
+  
+  <%= submit_tag "Submit" %>
+<% end %>

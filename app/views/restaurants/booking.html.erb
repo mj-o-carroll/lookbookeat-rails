@@ -1,0 +1,53 @@
+<% provide(:title, 'Booking') %>
+
+<div class="general-page-container">
+<div class="span7">
+  <%= image_tag("book_text.png", :size => "299x98", alt: "Book a table", id:"find-res-text")%>
+  Please complete the fields below to reserve your table at <%= @restaurant.name %>.
+  <ul>
+    <li>Date</li>
+    <li>Time</li>
+    <li>No. of seats</li>
+    
+  </ul>
+  
+  
+  <%= form_tag restaurant_booking_path(:id => @restaurant), method: :post do |f| %>
+  <%= label_tag "booking_info[message]", "Message" %><br/>
+  <%= text_area_tag "booking_info[message]", "I'd like to book a table for...please add time, date and no. of seats you require ", size: "60x10" %>
+  <% @restaurant = Restaurant.find(params[:id]) %>
+  <% hidden_field_tag "booking_info[restaurant_email]", "@restaurant.email"%>
+  <% hidden_field_tag "booking_info[restaurant_id]", "@restaurant.id"%>
+  
+  <% hidden_field_tag "booking_info[user_email]", "ocarrollmj@gmail.com"%>
+  <% hidden_field_tag "booking_info[user_name]", "MJ O'Carroll"%>
+  <% hidden_field_tag "booking_info[user_id]", "1"%>
+  <br/>
+  
+  <%= submit_tag "Submit" %>
+<% end %>
+ 
+  <h2>
+    Find your favourite foods at any time!
+  </h2>
+  You will receive an email once your booking is confirmed!
+</div>
+<div class="span5">
+    <ul>
+   <li><%= link_to image_tag("menus.png", :class => "menu",  alt: "Menus"), menu_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("book_a_table.png", :class => "menu", alt: "Book A Table"), booking_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("find_on_map.png", :class => "menu", alt: "Find On Map"), map_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("comment.png", :class => "menu", alt: "Comment"), comments_restaurant_path %>
+   </li>
+   <li><%= link_to image_tag("share.png", :class => "menu", alt: "Share"), 'http://www.apple.com/ie/' %>
+   </li>
+  </ul>
+    <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+   </div>
+</div>
+
+
+

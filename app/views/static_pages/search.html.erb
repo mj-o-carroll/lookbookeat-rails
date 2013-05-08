@@ -1,0 +1,48 @@
+<% provide(:title, 'Search') %>
+
+<div class="general-page-container">
+<div class="span7">
+  <%= image_tag("find_res_text.png", :size => "402x98", alt: "Find a restaurant", id:"find-res-text")%>
+
+<%= form_tag results_path, :method => 'get' do %>
+  <ul>
+    <% location_array = Restaurant.all.map { |restaurant| [restaurant.location] } %>
+    <% locations = location_array.uniq {|s| s.first} %>
+    <li>By County <%= select_tag "location", options_for_select(locations)%></li>
+    <% food_type_array = Restaurant.all.map { |restaurant| [restaurant.food_type] } %>
+    <% food_types = food_type_array.uniq {|s| s.first} %>
+    <li>Food Type <%= select_tag "food_type", options_for_select(food_types)%></li>
+    <% prices_array = Restaurant.all.map { |restaurant| [restaurant.price_range] } %>
+    <% price_ranges = prices_array.uniq {|s| s.first} %>
+    <li>Price Range <%= select_tag "price_range", options_for_select(price_ranges)%></li>
+    <% ratings_array = Restaurant.all.map { |restaurant| [restaurant.rating] } %>
+    <% ratings = ratings_array.uniq {|s| s.first} %>
+    <li>Rating <%= select_tag "rating", options_for_select(ratings)%></li>
+    <li>Nearby <%= select_tag "nearby", options_for_select([ "Pending", "Open", "Closed" ]) %></li>
+    Yes will lead to Google maps search.
+    <li>Special Diet <%= select_tag "diet", options_for_select([ "Vegetarian Friendly", "Coeliac Friendly", "Vegan Friendly" ]) %></li>
+  </ul>
+
+  <%= submit_tag "Search", :name => nil %> 
+      
+  <% end %> 
+
+   
+  
+
+  
+  <h2>
+    Find your favourite foods at any time!
+  </h2>
+</div> 
+<div class="span5">
+  <h2>
+    Download our app from the app store!
+  </h2>
+  <%= link_to image_tag("3iphones.png", alt: "LookBookEat App"), 'http://www.apple.com/ie/' %>
+  <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+</div>
+</div>
+
+
+

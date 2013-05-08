@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to image_tag("website_logo.png", :size => "571x114", alt: "LookBookEat App"), root_path, id: "logo" %>
+          <nav>
+            <!-- 457x91 -->
+            <ul class="nav pull-right">
+              <li><%= link_to "Search",    search_path %></li>
+              <li><%= link_to "Register",    signup_path %></li>
+              <li><%= link_to "Login", signin_path %></li>
+            </ul>
+          </nav>
+          <div class="header-divider">
+        <%= image_tag("header_divider.png", :size => "980x9") %>
+      </div>
+        </div>
+
+      </div>
+
+      
+    </header>

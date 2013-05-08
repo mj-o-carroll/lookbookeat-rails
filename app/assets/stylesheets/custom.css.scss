@@ -1,0 +1,446 @@
+@import "bootstrap";
+
+/* mj css*/
+
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url(/assets/Chunkfive-webfont.eot);
+  src: url(/assets/Chunkfive-webfont.eot?#iefix) format('embedded-opentype'),
+     url(/assets/Chunkfive-webfont.woff) format('woff'),
+     url(/assets/Chunkfive-webfont.ttf) format('truetype'),
+     url(/assets/Chunkfive-webfont.svg#ChunkFiveRegular) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HaloHandLetter';
+  src: url(/assets/HaloHandLetter.eot);
+  src: url(/assets/HaloHandLetter.eot?#iefix) format('embedded-opentype'),
+     url(/assets/HaloHandLetter.woff) format('woff'),
+     url(/assets/HaloHandLetter.ttf) format('truetype'),
+     url(/assets/HaloHandLetter.svg#HaloHandLetter) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.6em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body 
+{
+  /* mj css*/
+  background-image: url(light_toast_@2X.png);
+  background-repeat: repeat;
+
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto !important;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* mj css - from here down */
+
+.navbar-inner{
+
+  background-image: url(light_toast_@2X.png);
+  background-repeat: repeat;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+
+}
+
+.container{
+  width:980px;
+}
+
+.span7 {
+margin-left:0px;
+
+background-color: #f5f5f5;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+padding:12px;
+padding-top:25px;
+padding-bottom:25px; 
+height:427px;
+/* overflow-y:auto; */
+}
+
+
+.span5 {
+background-color: #f5f5f5;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+float:right;
+padding:8px;
+padding-top:25px;
+padding-bottom:25px;
+font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif; 
+}
+
+.span5 h2{
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif;
+  color: black;
+  font-size: 40px;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1.5px;
+   -webkit-text-stroke-color: black;
+
+}
+
+.span7 h2{
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif;
+  color:black;
+  font-size: 28px; 
+}
+
+.span7 h1{
+  color: #9b1919;
+   -webkit-text-fill-color: #9b1919; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 0px;
+   -webkit-text-stroke-color: black;
+   font-size: 120px; 
+}
+
+.span7 ul{
+  color: #9b1919;
+  font-size: 18px;
+  list-style-type: none;
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif; 
+}
+
+.navbar-fixed-top {
+position: static;
+top: 0;
+right: 0;
+left: 0;
+z-index: 1030;
+}
+
+#logo {
+  margin-left: -10px;
+}
+
+.navbar .nav.pull-right {
+  margin-top: 60px;
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif;
+  color:black;
+  font-size: 22px;
+
+}
+
+.navbar .nav > li > a {
+
+color: #000000;
+
+}
+
+.header-divider{
+  height:10px;
+
+}
+
+.general-page-container{
+  margin-top: 35px;
+  width:980px;
+  min-height:350px;
+}
+
+#find-text{
+  margin-top: 60px;;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  padding-bottom:35px;
+}
+
+#find-res-text{
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  padding-bottom:35px;
+}
+
+footer{
+  clear:both;
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif;
+  color:grey;
+  margin-top: 70px;
+
+}
+
+.footer-content{
+  padding-top:15px;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.app-store-img{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+
+/* search form dropdown */
+.general-page-container input, textarea, select, .uneditable-input {
+width: 40%;
+padding: 0px;
+margin-bottom: 0px;
+}
+
+.results-list{
+  height:260px; 
+  overflow-y:auto;
+  padding-left:12px;
+}
+
+.profile-title{
+  font-family: Chunkfive, Georgia, Palatino, Times New Roman, serif; 
+  font-size: 3.25em;
+  color:white;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 0.75px;
+   -webkit-text-stroke-color: black;
+   padding: 10px;
+   padding-top:15px;
+   float:left;
+}
+
+.restaurant-pic
+{
+  
+  float:right;
+}
+
+.restaurant-info{
+  float:left;
+
+}
+
+.restaurant-details{
+  clear:both;
+  padding: 10px;
+}
+
+.restaurant-desc{
+  clear:both;
+  padding: 10px;
+  padding-top:25px;
+}
+
+#rating-pic{
+padding-right:20px;
+}
+
+ul{
+  list-style-type:none;
+  vertical-align:middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu{
+  padding-top:10px;
+  padding-bottom:20px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;  
+}
+
+.map-view{
+  clear:both;
+  
+}
+
+.comments{
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  
+  clear:both;
+}
+
+.existing-comments{
+  overflow-y:auto;
+  height:200px;
+  padding-left:10px;
+}
+
+
+
+
