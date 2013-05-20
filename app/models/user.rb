@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :booking
   has_many :comments
 
-=begin before_save do |user| 
+before_save do |user| 
       
         user.u_email = u_email.downcase 
         user.remember_token = SecureRandom.urlsafe_base64
@@ -16,5 +16,5 @@ class User < ActiveRecord::Base
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
-=end validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true
 end

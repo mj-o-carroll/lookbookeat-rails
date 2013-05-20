@@ -1,11 +1,44 @@
 <% provide(:title, @user.u_name) %>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.username %>
-      </h1>
-    </section>
+  <aside class="span7">
+    
+      <h2>
+        
+        <%= @user.username %><br>
+        <%= @user.u_email %><br>
+        <%= @user.u_phone %><br>
+
+      </h2>
+
+   
+    <div>
+      <% if @userscomments %>
+
+      <ul>
+            <% for comment in @userscomments %>
+            <li>
+              <%= comment.restaurant_id =%>
+            <%  @restaurant = Restaurant.where("id = ?", comment.restaurant_id) %>
+            <%= @restaurant.name =%>
+            
+            - <%= comment.date =%> 
+        </li>
+        <br>
+        <li>
+            <%= comment.content %>
+        </li>
+        <li>
+            <%= comment.rating %>
+        </li>
+        
+        <br>
+
+        <% end %>
+    </ul>
+
+<% else %>
+You've made no comments!
+<% end %>
+</div>
   </aside>
 </div> 

@@ -14,17 +14,16 @@
  </div>
    <div class="span5">
     <ul>
+      <li><%= link_to image_tag("profile.png", :class => "menu",  alt: "Profile"), restaurant_path %>
+       </li>
    <li><%= link_to image_tag("menus.png", :class => "menu",  alt: "Menus"), menu_restaurant_path %>
-   </li>
-   <li><%= link_to image_tag("book_a_table.png", :class => "menu", alt: "Book A Table"), booking_restaurant_path %>
    </li>
    <li><%= link_to image_tag("find_on_map.png", :class => "menu", alt: "Find On Map"), map_restaurant_path %>
    </li>
    <li><%= link_to image_tag("comment.png", :class => "menu", alt: "Comment"), comments_restaurant_path %>
    </li>
-   <li><%= link_to image_tag("share.png", :class => "menu", alt: "Share"), 'http://www.apple.com/ie/' %>
-   </li>
+   
   </ul>
-    <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+    <%= image_tag("custom_app_store.jpg", :class => "app-store-img", :size => "172x66", alt: "App Store")%>
    </div>
 </div> 

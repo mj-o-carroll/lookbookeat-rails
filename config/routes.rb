@@ -16,8 +16,8 @@ end
   resources :sessions, only: [:new, :create, :destroy]
   resources :results
   resources :maps
-  resources :bookings
   resources :bookings, only: [:index, :create]
+  
   
 
  
@@ -38,7 +38,9 @@ end
   match '/booking_restaurant', to: 'restaurants#booking'
   match '/menu_restaurant', to: 'restaurants#menu'
   match 'menu', to: 'menus#show'
+  match '/menus', to: 'menus#index'
   match '/restaurant_booking', to: 'restaurants#create_booking'
+  match '/appcomments', to: 'appcomments#create'
  
   
 

@@ -5,14 +5,18 @@
   <%= image_tag("find_res_text.png", :size => "402x98", alt: "Find a restaurant", id:"find-res-text")%>
 <div class="results-list">
     
-    
+  <% if @results.blank? %>
+  Sorry no results match your query, please refine your search.
+  <% else %>  
   <ul>
         <% for restaurant in @results %>
         <li>
-        <%= link_to restaurant.name, restaurant %>, <%= restaurant.address %>
+        <%= link_to restaurant.name, restaurant %>   -   <%= restaurant.address %>
     </li>
+
     <% end %>
 </ul>
+<% end %>
 </div>
 
 
@@ -22,9 +26,9 @@
 </div> 
 <div class="span5">
   <h2>
-    Download our app from the app store!
+    Coming soon to the app store!
   </h2>
-  <%= link_to image_tag("3iphones.png", alt: "LookBookEat App"), 'http://www.apple.com/ie/' %>
-  <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+  <%= image_tag("3iphones.png", alt: "LookBookEat App") %>
+  <%=  image_tag("custom_app_store.jpg", :class => "app-store-img", :size => "172x66", alt: "App Store")%>
 </div>
 </div>

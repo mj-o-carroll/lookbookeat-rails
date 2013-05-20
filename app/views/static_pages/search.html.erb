@@ -3,44 +3,53 @@
 <div class="general-page-container">
 <div class="span7">
   <%= image_tag("find_res_text.png", :size => "402x98", alt: "Find a restaurant", id:"find-res-text")%>
-
+<div class="search_form">
 <%= form_tag results_path, :method => 'get' do %>
   <ul>
     <% location_array = Restaurant.all.map { |restaurant| [restaurant.location] } %>
     <% locations = location_array.uniq {|s| s.first} %>
-    <li>By County <%= select_tag "location", options_for_select(locations)%></li>
+    <li>By County <span class="drop-down"><%= select_tag "location", options_for_select(locations), :prompt => "  -- Please Select --"%></span></li>
+    </br>
     <% food_type_array = Restaurant.all.map { |restaurant| [restaurant.food_type] } %>
     <% food_types = food_type_array.uniq {|s| s.first} %>
-    <li>Food Type <%= select_tag "food_type", options_for_select(food_types)%></li>
+    <li>Food Type <span class="drop-down"><%= select_tag "food_type", options_for_select(food_types), :prompt => "  -- Please Select --"%></span></li>
+    </br>
     <% prices_array = Restaurant.all.map { |restaurant| [restaurant.price_range] } %>
     <% price_ranges = prices_array.uniq {|s| s.first} %>
-    <li>Price Range <%= select_tag "price_range", options_for_select(price_ranges)%></li>
+    <li>Price Range <span class="drop-down"><%= select_tag "price_range", options_for_select(price_ranges), :prompt => "  -- Please Select --"%></span></li>
+    </br>
     <% ratings_array = Restaurant.all.map { |restaurant| [restaurant.rating] } %>
     <% ratings = ratings_array.uniq {|s| s.first} %>
-    <li>Rating <%= select_tag "rating", options_for_select(ratings)%></li>
-    <li>Nearby <%= select_tag "nearby", options_for_select([ "Pending", "Open", "Closed" ]) %></li>
+    <li>Rating <span class="drop-down"><%= select_tag "rating", options_for_select(ratings), :prompt => "  -- Please Select --" %></span></li>
+    </br>
+    <!-- 
+    <li>Nearby <%= select_tag "nearby", options_for_select([ "Pending", "Open", "Closed" ]) %></li> 
     Yes will lead to Google maps search.
-    <li>Special Diet <%= select_tag "diet", options_for_select([ "Vegetarian Friendly", "Coeliac Friendly", "Vegan Friendly" ]) %></li>
+    -->
+    <li>Special Diet <span class="drop-down"><%= select_tag "diet", options_for_select([ "Vegetarian Friendly", "Coeliac Friendly", "Vegan Friendly" ]), :prompt => "  -- Please Select --" %></span></li>
   </ul>
+</br>
 
-  <%= submit_tag "Search", :name => nil %> 
-      
+</br>
+
+  <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
+  
   <% end %> 
-
-   
+</br>
+  </div> 
   
 
-  
+
   <h2>
     Find your favourite foods at any time!
   </h2>
 </div> 
 <div class="span5">
   <h2>
-    Download our app from the app store!
+    Coming soon to the app store!
   </h2>
-  <%= link_to image_tag("3iphones.png", alt: "LookBookEat App"), 'http://www.apple.com/ie/' %>
-  <%= link_to image_tag("app_store.jpeg", :class => "app-store-img", :size => "172x66", alt: "App Store"), 'http://www.apple.com/ie/' %>
+  <%= image_tag("3iphones.png", alt: "LookBookEat App") %>
+  <%= image_tag("custom_app_store.jpg", :class => "app-store-img", :size => "172x66", alt: "App Store") %>
 </div>
 </div>
 

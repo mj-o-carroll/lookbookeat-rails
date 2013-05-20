@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @userscomments = Comment.where("user_id = ?",params[:id])
+    
+    Rails.logger.debug("Debug info #{params}")
 
     respond_to do |format|
            format.html # show.html.erb
@@ -33,6 +36,9 @@ def index
       render 'new'
     end
   end
+
+
+
 end
 
 

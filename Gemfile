@@ -23,6 +23,11 @@ group :development, :test do
   gem 'rspec-rails', '2.10.0'
 end
 
+group :production do
+  gem 'pg'
+  gem 'therubyracer-heroku'
+end
+
 group :test do
   gem 'capybara', '1.1.2'
 end
@@ -31,7 +36,7 @@ gem 'jquery-rails'
 
 gem 'bcrypt-ruby', '3.0.1'
 
-gem 'bootstrap-sass' , '2.0.0'
+gem 'bootstrap-sass' , '2.3.0.1'
 
 gem 'ransack'
 

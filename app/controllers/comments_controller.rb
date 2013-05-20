@@ -15,7 +15,7 @@ def index
 
   respond_to do |format|
            
-           format.json { render :json => @comment, only: [:id, :content, :date, :name, :rating]}
+           format.json { render :json => @comment, only: [:id, :restaurant_id, :content, :date, :name, :rating]}
 
   end
 
@@ -30,8 +30,20 @@ def index
     @restaurant = Restaurant.find(params[:comment][:id])
     @comment = Comment.new(params[:comment]) 
     @comments = Comment.where("restaurant_id = ?", params[:comment][:id]) 
+
     if @comment.save
-      flash[:success] = "Comment saved!" 
+      flash[:success] = "Comment saved!"
+    @total_ratings = 0
+    
+     for comment in @comments
+    
+      @total_ratings += comment.rating.to_f
+
+    end
+    
+    @new_rating = (@total_ratings / @comments.count).ceil
+
+    @restaurant.update_attributes(:rating => @new_rating) 
       redirect_to comments_restaurant_path(@restaurant)
     else
       render 'new'

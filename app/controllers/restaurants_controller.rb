@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
   @comment = Comment.new
   @restaurant = Restaurant.find(params[:id])
   @comments = Comment.where("restaurant_id = ?",params[:id])
+  Rails.logger.debug("Debug info #{params}")
   
   render 'comments'
   end

@@ -7,7 +7,7 @@ def new
     user = User.find_by_u_email(params[:session][:u_email].downcase)
     if user && user.authenticate(params[:session][:password])
     	sign_in user
-      redirect_to user
+      redirect_to root_url
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'
@@ -16,6 +16,8 @@ def new
 
 
   def destroy
+    sign_out
+    redirect_to root_url
   end
 
 end

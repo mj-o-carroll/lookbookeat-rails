@@ -1,8 +1,12 @@
 <% provide(:title, 'Sign up') %>
-<h1 class="profile">Sign up</h1>
+
+
+  <%= image_tag("register.png", id: "register",  alt: "register") %>
+
+         
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6">
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
 
@@ -24,7 +28,14 @@
       <%= f.label :u_phone, "Contact number" %>
       <%= f.text_field :u_phone %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create my profile", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
+  <div class="span5">
+  <h2>
+    Coming soon to the app store!
+  </h2>
+  <%=  image_tag("3iphones.png", alt: "LookBookEat App")%>
+  <%=  image_tag("custom_app_store.jpg", :class => "app-store-img", :size => "172x66", alt: "App Store") %>
+</div>
 </div>

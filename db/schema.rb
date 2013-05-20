@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505154128) do
+ActiveRecord::Schema.define(:version => 20130512190507) do
 
   create_table "advertisments", :force => true do |t|
     t.string   "ad_duration"
@@ -58,11 +58,19 @@ ActiveRecord::Schema.define(:version => 20130505154128) do
 
   create_table "menus", :force => true do |t|
     t.string   "title"
-    t.text     "content"
     t.string   "menu_type"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "restaurant_id"
+    t.string   "starter_1"
+    t.string   "starter_2"
+    t.string   "starter_3"
+    t.string   "main_1"
+    t.string   "main_2"
+    t.string   "main_3"
+    t.string   "dessert_1"
+    t.string   "dessert_2"
+    t.string   "dessert_3"
   end
 
   create_table "restaurants", :force => true do |t|
