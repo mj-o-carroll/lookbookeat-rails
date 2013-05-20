@@ -12,21 +12,7 @@ class RestaurantsController < ApplicationController
   @comments = Comment.where("restaurant_id = ?",params[:id])
   Rails.logger.debug("Debug info #{params}")
   
-  if @comment.save
-      
-    @total_ratings = 0
-    
-     for comment in @comments
-    
-      @total_ratings += comment.rating.to_f
-
-    end
-    
-    @new_rating = (@total_ratings / @comments.count).ceil
-
-    @restaurant.update_attributes(:rating => @new_rating) 
-      redirect_to comments_restaurant_path(@restaurant)
-    end
+  render 'comments'
   end
 
   def booking

@@ -45,8 +45,7 @@ def index
 
     @restaurant.update_attributes(:rating => @new_rating) 
       redirect_to comments_restaurant_path(@restaurant)
-    else
-      render 'comments'
+    
     end
   end
 end
