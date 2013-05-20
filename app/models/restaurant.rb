@@ -1,6 +1,6 @@
 class Restaurant < ActiveRecord::Base
   
-  attr_accessible :gmaps, :latitude, :longitude, :address, :coeliac_friendly, :description, :email, :food_type, :location, :name, :password, :password_confirmation, :username, :phone_no, :picture, :price_range, :rating, :veg_friendly, :vegan_friendly
+  attr_accessible :gmaps, :latitude, :longitude, :address, :coeliac_friendly, :description, :email, :food_type, :location, :name, :username, :phone_no, :picture, :price_range, :rating, :veg_friendly, :vegan_friendly
   has_secure_password
 
   has_many :booking
