@@ -44,6 +44,7 @@
                                   <%= f.label :content, "Comment" %>
                                   <%= f.text_field :content, id: "comment-field"%>
                                   <%= f.label :rating, "Rating" %>
+                                  <%= f.select :rating, options_for_select([ "1", "2", "3", "4" , "5"]), :prompt => "  -- Please Select Rating --" %>
                                   <%= f.hidden_field :date, :value => Date.today %>
                                   <%= f.hidden_field :id, :value => @restaurant.id %>
                                   <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
