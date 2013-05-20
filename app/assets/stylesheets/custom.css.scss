@@ -410,6 +410,7 @@ div #log-in-message{
 .restaurant-info{
   float:left;
   font-size: 13px;
+  height:200px;
 
 }
 
@@ -422,6 +423,7 @@ div #log-in-message{
   clear:both;
   padding: 10px;
   padding-top:15px;
+  height:150px;
   overflow-y:auto;
 }
 
@@ -608,9 +610,12 @@ padding-top:15px;
 
 .add-comment{
   padding-left:10px;
-  padding-top:20px;
-  padding-bottom:13px;
+  padding-top:10px;
+  padding-bottom:5px;
+  margin-top:-15px;
 }
+
+
 
 
 #comment-field{
