@@ -26,6 +26,7 @@ class RestaurantsController < ApplicationController
 
     @restaurant.update_attributes(:rating => @new_rating) 
       redirect_to comments_restaurant_path(@restaurant)
+    end
   end
 
   def booking
