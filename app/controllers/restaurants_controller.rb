@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
   @comments = Comment.where("restaurant_id = ?",params[:id])
   Rails.logger.debug("Debug info #{params}")
   
-  render 'comments'
+  redirect_to comments_restaurant_path(@restaurant)
   end
 
   def booking
