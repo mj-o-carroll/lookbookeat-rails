@@ -56,7 +56,6 @@ def index
   def create
     @restaurant = Restaurant.new(params[:restaurant])
     if @restaurant.save
-      flash[:success] = "Welcome to the LookBookEat!" 
       redirect_to @restaurant
     else
       render 'new'
