@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   def comments
   @comment = Comment.new
   @restaurant = Restaurant.find(params[:id])
-  @comments = Comment.where("restaurant_id = ?",params[:id])
+  @commentlist = Comment.where("restaurant_id = ?",params[:id])
   Rails.logger.debug("Debug info #{params}")
   
   render 'comments'

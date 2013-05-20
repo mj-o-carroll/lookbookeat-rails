@@ -11,13 +11,13 @@
                 
                     <div class="existing-comments">
                         <ul>
-                          <% if @comments.blank? %>
+                          <% if @commentlist.blank? %>
                         </br>
                           Nobody has commented yet on <%= @restaurant.name %>.
                             
                             <% else %> 
 
-                            <% for comment in @comments %>
+                            <% for comment in @commentlist %>
                             <li>
                                 <%= comment.name %> - <%= comment.date %> 
                             </li>

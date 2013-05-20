@@ -29,19 +29,19 @@ def index
   def create
     @restaurant = Restaurant.find(params[:comment][:id])
     @comment = Comment.new(params[:comment]) 
-    @comments = Comment.where("restaurant_id = ?", params[:comment][:id]) 
+    @commentlist = Comment.where("restaurant_id = ?", params[:comment][:id]) 
 
     if @comment.save
       
     @total_ratings = 0
     
-     for comment in @comments
+     for comment in @commentlist
     
       @total_ratings += comment.rating.to_f
 
     end
     
-    @new_rating = (@total_ratings / @comments.count).ceil
+    @new_rating = (@total_ratings / @commentlist.count).ceil
 
     @restaurant.update_attributes(:rating => @new_rating) 
       redirect_to comments_restaurant_path(@restaurant)
