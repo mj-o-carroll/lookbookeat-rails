@@ -32,7 +32,7 @@ def index
     @comments = Comment.where("restaurant_id = ?", params[:comment][:id]) 
 
     if @comment.save
-      flash[:success] = "Comment saved!"
+      
     @total_ratings = 0
     
      for comment in @comments
