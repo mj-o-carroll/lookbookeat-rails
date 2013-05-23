@@ -43,7 +43,6 @@ def index
     
     @newrating = (@total_ratings / @commentlist.count).ceil
 
-    
       redirect_to comments_restaurant_path(@restaurant)
     
     end

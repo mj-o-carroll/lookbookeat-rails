@@ -2,7 +2,6 @@ class ResultsController < ApplicationController
 
 def index
  
-  #@results = Restaurant.search(new_params)
 
   conditions = {}
 conditions[:location] = params[:location] if !params[:location].blank?
@@ -19,15 +18,8 @@ if params[:diet] == "Vegan Friendly"
   conditions[:vegan_friendly] = 1
 end
 
-
-
-#conditions[:id] = params[:id] if params[:id]
-#conditions[:email] = params[:email] if params[:email]
 @results = Restaurant.where(conditions)
 
-  #@results = Restaurant.where("location = ?", params[:location]) unless params[:location].blank?
-
- #"food_type = ?", params[:food_type] unless params[:food_type].blank? , unless params[:location].blank?
  
   render 'show'
  

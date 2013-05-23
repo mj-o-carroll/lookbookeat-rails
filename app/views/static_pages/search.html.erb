@@ -22,10 +22,7 @@
     <% ratings = ratings_array.uniq {|s| s.first} %>
     <li>Rating <span class="drop-down"><%= select_tag "rating", options_for_select(ratings), :prompt => "  -- Please Select --" %></span></li>
     </br>
-    <!-- 
-    <li>Nearby <%= select_tag "nearby", options_for_select([ "Pending", "Open", "Closed" ]) %></li> 
-    Yes will lead to Google maps search.
-    -->
+    
     <li>Special Diet <span class="drop-down"><%= select_tag "diet", options_for_select([ "Vegetarian Friendly", "Coeliac Friendly", "Vegan Friendly" ]), :prompt => "  -- Please Select --" %></span></li>
   </ul>
 </br>
